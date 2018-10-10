@@ -107,18 +107,16 @@ public class WeatherActivity extends AppCompatActivity implements ApiImpl.ApiRes
     public void onResponse(Object response, Object error, int apiId) {
         switch (apiId) {
             case GET_WEATHER :
+                progressbar.setVisibility(View.GONE);
                 if(error == null) {
-                    progressbar.setVisibility(View.GONE);
                     WeatherList list =  new WeatherList();
                     list.setList((ArrayList<WeatherDetail>) response);;
-//                    String resp = (String) response;
-//                    WeatherList list = new Gson().fromJson(resp, new TypeToken<WeatherList>() {
-//                    }.getType());
 
                     if(list != null)
                         adapter.refresh(list);
                 } else {
                     String err = (String) error;
+                    Toast.makeText(this, err, Toast.LENGTH_SHORT).show();
                 }
                 break;
 
