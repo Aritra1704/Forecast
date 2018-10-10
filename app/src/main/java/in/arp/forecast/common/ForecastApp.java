@@ -22,7 +22,6 @@ public class ForecastApp extends Application {
         initDashboardRetrofit();
     }
 
-
     private void initDashboardRetrofit() {
         initHTTPClient();
         retrofit = new Retrofit.Builder()

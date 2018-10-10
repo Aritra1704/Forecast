@@ -29,12 +29,12 @@ public class AddLocFragment extends AppCompatDialogFragment {
     private static final int PLUS_ONE_REQUEST_CODE = 0;
     private final String PLUS_ONE_URL = "http://developer.android.com";
     @BindView(R.id.edtloc)
-    private EditText edtloc;
+    protected EditText edtloc;
     @BindView(R.id.btnSave)
-    private Button btnSave;
+    protected Button btnSave;
     private SharedVM model;
     private String selLocation;
-    private OnFragmentInteractionListener mListener;
+//    private OnFragmentInteractionListener mListener;
 
     public AddLocFragment() {
     }
@@ -85,30 +85,30 @@ public class AddLocFragment extends AppCompatDialogFragment {
     }
 
     public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+//        mListener = null;
     }
 
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
-    }
+//    public interface OnFragmentInteractionListener {
+//        void onFragmentInteraction(Uri uri);
+//    }
 
 }

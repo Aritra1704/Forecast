@@ -1,10 +1,12 @@
 package in.arp.forecast.model;
 
+import java.util.ArrayList;
+
 public class BaseResponse {
     private String cod;
-    private String message;
+    private double message;
     private int cnt;
-    private String list;
+    private ArrayList<WeatherDetail> list;
 
     public String getCod() {
         return cod;
@@ -14,11 +16,11 @@ public class BaseResponse {
         this.cod = cod;
     }
 
-    public String getMessage() {
+    public double getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(double message) {
         this.message = message;
     }
 
@@ -30,11 +32,11 @@ public class BaseResponse {
         this.cnt = cnt;
     }
 
-    public String getList() {
+    public ArrayList<WeatherDetail> getList() {
         return list;
     }
 
-    public void setList(String list) {
+    public void setList(ArrayList<WeatherDetail> list) {
         this.list = list;
     }
 }
